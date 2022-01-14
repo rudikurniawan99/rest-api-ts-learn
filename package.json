@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node ./build/app.js",
     "build": "tsc -p .",
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/app.ts"
   },
   "author": "Rudi Kurniawan",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^11.0.0",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
   },

@@ -23,5 +23,6 @@ const verifyUser = async ({email, password}: { email: string, password: string }
 }
 
 export {
-  createUser
+  createUser,
+  verifyUser
 }

@@ -12,7 +12,7 @@ export interface SessionDocument extends SessionInput, Document{
   updatedAt: Date
 }
 
-export const createSesstionSchema = new mongoose.Schema({
+export const sessionSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: User,
@@ -25,5 +25,5 @@ export const createSesstionSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Session = mongoose.model<SessionDocument>('Session', createSesstionSchema)
+const Session = mongoose.model<SessionDocument>('Session', sessionSchema)
 export default Session

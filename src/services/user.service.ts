@@ -10,6 +10,12 @@ const createUser = async (body: UserInput) => {
   }
 }
 
+const findUserByEmail = async (email: string) => {
+  const user = await UserModel.findOne({email})
+  if(!user) false
+  return omit(user, ['password'])
+}
+
 const verifyUser = async ({email, password}: { email: string, password: string }) => {
   const user = await UserModel.findOne({ email })
   if(!user){
@@ -24,5 +30,6 @@ const verifyUser = async ({email, password}: { email: string, password: string }
 
 export {
   createUser,
-  verifyUser
+  verifyUser,
+  findUserByEmail
 }

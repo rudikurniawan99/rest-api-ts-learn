@@ -5,7 +5,6 @@ import User from './user.model'
 export interface SessionInput {
   user: UserDocument['_id']
   valid: boolean
-  userAgent: string
 }
 
 export interface SessionDocument extends SessionInput, Document{
@@ -21,9 +20,6 @@ export const createSesstionSchema = new mongoose.Schema({
   valid: {
     type: Boolean,
     default: true
-  },
-  userAgent: {
-    type: String
   }
 }, {
   timestamps: true
